@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .logo{
     width: 100px;
     height: 100px;
@@ -53,10 +55,18 @@ nav{
     color: white;
     background-color:rgba(40, 152, 196); ;
 }
+
+.grey-qo-regular {
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
 .textedebienvenu{
     text-align: justify;
-    font-size: 1em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8em;
+    font-family: "Grey Qo", cursive;
 }
 .bienvenu{
     padding: 20px;
@@ -694,5 +704,111 @@ input.success::after {
     }
     100% {
         transform: translate(0, 0);
+    }
+}
+
+/* Css responsivite */
+@media screen and (max-width: 768px) {
+    .premier {
+        display: none;
+    }
+
+    /* Style the hamburger menu button */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Hide the navigation menu by default on mobile */
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+
+    #navMenu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #navMenu li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+}
+
+/* Show the menu when the screen is larger */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    #navMenu {
+        display: flex;
+        flex-direction: row;
+    }
+}
+/* Styles pour le logo et le bouton hamburger */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: relative; /* Pour le positionnement du menu */
+}
+
+.logo {
+    width: 100px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+
+/* Cacher le menu par défaut en vue mobile */
+.navbar_nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar_nav {
+        display: none; /* Cacher le menu par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Ajuster en fonction de la hauteur de la barre de navigation */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+        transition: max-height 0.3s ease-in-out; /* Transition pour l'effet de déroulement */
+        max-height: 0; /* Masquer le contenu par défaut */
+        overflow: hidden; /* Empêcher le débordement */
+    }
+
+    .navbar_nav.active {
+        display: flex;
+        max-height: 500px; /* Ajuster si nécessaire pour permettre le déroulement */
+    }
+
+    .hamburger {
+        display: flex;
     }
 }

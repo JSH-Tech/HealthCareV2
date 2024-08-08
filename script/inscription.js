@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     // Recuperation du formulaire
     const form = document.forms.form_inscription
-    const msg_remerciement = document.getElementById('msg_remerciement');
+    const thankYouMessage= document.getElementById('thankYouMessage');
     
     // Recuperation des champs du formulaire par leur nom
     const { name, Surname, age, ville, province, celibataire,
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     marie, telephone,nombre_enfant, Email,postcode,mot_passe } 
     
     // Recuperation des valeurs des champs
-    const valeurs = { name: name.value, Surname: Surname.value, age:age.value, ville: ville.value, province: province.value, celibataire: celibataire.value,
+    const valeurs = { name: name.value, Surname: Surname.value, age:age.value, homme: homme.value ,femme: femme.value ,autre:autre.value,ville: ville.value, province: province.value, celibataire: celibataire.value,
                     marie: marie.value, telephone: telephone.value,nombre_enfant: nombre_enfant.value, Email: Email.value, postcode: postcode.value } 
     
      //Creation d'un objet pour retenir les erreurs de validation
@@ -89,7 +89,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
         break
     }
     }
-    
+     // Fonction pour valider les cases à cocher
+     function validerCheckboxes() {
+        if (!homme.checked && !femme.checked && !autre.checked) {
+            erreur.genre = "Veuillez sélectionner un genre";
+            return false;
+        } else {
+            erreur.genre = "";
+            return true;
+        }
+        
+    }
+
      // Recuperation des elements de la page a afficher
      const message = document.querySelector("#remerciement")
      form.addEventListener("soumis", (e) => {

@@ -755,7 +755,7 @@ input.success::after {
 /* Styles pour le logo et le bouton hamburger */
 nav {
     display: flex;
-<<<<<<< HEAD
+
 }
 /* Style pour le bouton de soumission */
 #soumis {
@@ -816,12 +816,244 @@ nav {
     color: rgb(1, 35, 48);
     font-weight: bold;
 }
-=======
+/*CSS Fomulaire modification*/
+.formulaireDeMode {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    opacity: 90%;
+}
+ 
+.modeForm {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+ 
+.modeForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+ 
+.modeForm input,
+.modeForm select {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+ 
+.modeForm button {
+    background-color:  rgb(40, 152, 196);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+ 
+.modeForm button:hover {
+    background-color: rgb(232, 8, 8);
+    transform: scale(1.05);
+    color: black;
+}
+ 
+.formulaireDeMode h1 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Fade In Animation for the Form */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+ 
+.formulaireDeMode {
+    animation: fadeIn 0.5s ease-in-out;
+}
+ 
+ 
+ 
+/* Shake Effect for Error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+ 
+input.error {
+    animation: shake 0.5s;
+}
+ 
+/* Success Checkmark */
+input.success::after {
+    content: '✔';
+    color: green;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+ 
+.formulaireDeMode label {
+    font-weight: bold;
+}
+ 
+.formulaireDeMode input[type="text"],
+.formulaireDeMode input[type="password"],
+.formulaireDeMode input[type="tel"],
+.formulaireDeMode input[type="email"],
+.formulaireDeMode select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+ 
+/* Surbrillance des champs actifs */
+.formulaireDeMode input[type="text"]:focus,
+.formulaireDeMode input[type="password"]:focus,
+.formulaireDeMode input[type="tel"]:focus,
+.formulaireDeMode input[type="email"]:focus,
+.formulaireDeMode select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #f0f8ff;
+    outline: none;
+}
+ 
+/* .modebody{
+    background-image: url(../img/fond.jpg);
+} */
+ 
+#titreErreur {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.animation-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+ 
+.circle, .square, .triangle {
+    position: absolute;
+    animation: move 4s infinite ease-in-out;
+}
+ 
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+ 
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61;
+    top: 0;
+    right: 0;
+}
+ 
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #ffcc00;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+ 
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, 100px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+ 
+/* Css responsivite */
+@media screen and (max-width: 768px) {
+    .premier {
+        display: none;
+    }
+ 
+    /* Style the hamburger menu button */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+    }
+ 
+    /* Hide the navigation menu by default on mobile */
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+ 
+    #navMenu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+ 
+    #navMenu li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+}
+ 
+/* Show the menu when the screen is larger */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+ 
+    #navMenu {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+nav {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
     position: relative; /* Pour le positionnement du menu */
 }
+ 
 
 .logo {
     width: 100px;
@@ -946,5 +1178,3 @@ nav {
     }
 }
 
-
->>>>>>> e8c7f7c1bb05716509084ef84beb5eba0a9d89a1

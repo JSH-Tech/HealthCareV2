@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../script/script.js"></script>
+    <script src="../script/script.js" defer></script>
     <title>Mon compte</title>
 </head>
-<body>
+<body class="modebody">
     <header>
         <nav class="navbar_nav">
             <h1 class="titrecompte">Mon compte</h1>
@@ -17,17 +17,74 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="classMain">
         <div class="formulaireDeMode">
-            <form action="submit" method="post">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom">
-
-                <label for="prenoms">Prenoms</label>
-                <input type="text" name="prenoms" id="prenoms">
-
-                
-                <button type="submit">Modifier</button>
+            <h1>Modifier vos informations personnelles</h1>
+            <div id="titreErreur"></div>
+            <form action="#" class="modeForm" id="formModification" name="mode">
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom">
+                </div>
+                <div>
+                    <label for="prenoms">Prenoms</label>
+                    <input type="text" name="prenoms" id="prenoms">
+                </div>
+                <div>
+                    <label for="smdp">Ancien mot de passe</label>
+                    <input type="password" name="smdp" id="smdp">
+                </div>
+                <div>
+                    <label for="nmdp">Nouveau mot de passe</label>
+                    <input type="password" name="nmdp" id="nmdp">
+                </div>
+                <div>
+                    <label for="dob">Date de Naissance</label>
+                    <input type="text" name="dob" id="dob">
+                </div>
+                <div>
+                    <label for="genre">Genre</label>
+                    <select name="genre" id="genre">
+                        <option value="0"></option>
+                        <option value="1">Masculin</option>
+                        <option value="2">Feminin</option>
+                        <option value="3">Autre</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="situation_matrimonial">Situation matrimoniale</label>
+                    <select name="situation_matrimonial" id="situation_matrimonial">
+                        <option value="null"></option>
+                        <option value="c">Celibataire</option>
+                        <option value="m">Marié(e)</option>
+                        <option value="d">Divorcé</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="tel">Telephone</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="rue">Rue</label>
+                    <input type="text" name="rue" id="rue">
+                </div>
+                <div>
+                    <label for="ville">Ville</label>
+                    <input type="text" name="ville" id="ville">
+                </div>
+                <div>
+                    <label for="province">Province</label>
+                    <input type="text" name="province" id="province">
+                </div>
+                <div>
+                    <label for="cp">Code postal</label>
+                    <input type="text" name="cp" id="cp">
+                </div>
+                <button type="submit" class="btnmodifier">Modifier</button>
             </form>
         </div>
     </main>

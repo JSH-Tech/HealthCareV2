@@ -92,6 +92,68 @@ footer ul{
  margin-top: 20px;
 }
 
+/* section carroussel acceuil*/
+* {
+    box-sizing: border-box;
+}
+
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/* Fin section acceuil caroussel */
+
 
 /*css page service*/
 
@@ -386,6 +448,131 @@ main li p{
 }
 
 /*CSS Fomulaire modification*/
-.formulaireDeMode{
-    display: flex;
+.formulaireDeMode {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    opacity: 90%;
+}
+
+.modeForm {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modeForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modeForm input,
+.modeForm select {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modeForm button {
+    background-color:  rgb(40, 152, 196);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.modeForm button:hover {
+    background-color: rgb(232, 8, 8);
+    transform: scale(1.05);
+    color: black;
+}
+
+.formulaireDeMode h1 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Fade In Animation for the Form */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.formulaireDeMode {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+/* Shake Effect for Error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+input.error {
+    animation: shake 0.5s;
+}
+
+/* Success Checkmark */
+input.success::after {
+    content: '✔';
+    color: green;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.formulaireDeMode label {
+    font-weight: bold;
+}
+
+.formulaireDeMode input[type="text"],
+.formulaireDeMode input[type="password"],
+.formulaireDeMode input[type="tel"],
+.formulaireDeMode input[type="email"],
+.formulaireDeMode select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Surbrillance des champs actifs */
+.formulaireDeMode input[type="text"]:focus,
+.formulaireDeMode input[type="password"]:focus,
+.formulaireDeMode input[type="tel"]:focus,
+.formulaireDeMode input[type="email"]:focus,
+.formulaireDeMode select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #f0f8ff;
+    outline: none;
+}
+
+/* .modebody{
+    background-image: url(../img/fond.jpg);
+} */
+
+#titreErreur {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
 }

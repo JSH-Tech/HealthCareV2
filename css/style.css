@@ -384,11 +384,14 @@ main li p{
 
 /* CSS pages contacts */
 
+/* CSS pages contacts */
+
 .corps {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    animation: fadeInBody 1s ease-in-out;
 }
 
 .container-footer {
@@ -396,7 +399,9 @@ main li p{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    animation: fadeInUp 1s ease-in-out;
 }
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -410,11 +415,13 @@ main li p{
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .contact-form h2 {
     margin-top: 0;
+    animation: fadeInLeft 1s ease-in-out;
 }
 
 .contact-form label {
@@ -425,26 +432,88 @@ main li p{
 
 .contact-form input,
 .contact-form textarea {
-    width: 98%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
 }
 
 .contact-form button {
-    background-color:  rgb(40, 152, 196);
+    background-color: rgb(40, 152, 196);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: rgb(40, 152, 196);
+    background-color: rgb(28, 128, 166);
+    transform: scale(1.05);
+}
 
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#formMessage.error {
+    color: red;
+    animation: shake 0.5s;
+}
+
+#formMessage.success {
+    color: green;
+    animation: fadeInUp 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
 }
 
 /*CSS Fomulaire modification*/

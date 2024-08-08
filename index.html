@@ -7,17 +7,27 @@
     <link rel="icon" href="/img/logosansfond.png" type="images">
     <link rel="icon" href="/img/logosansfond.png" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/index.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <a href="#"><img src="./img/logosansfond.png" alt="Logo health care" class="logo"></a>
+            <div class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="navbar_nav">
 
                 <li><a href="#">Accueil</a></li>
                 <li><a href="./html/service.html">Services</a></li>
                 <li><a href="./html/contact.html">Contact</a></li>
                 <li><a href="./html/apropos.html">A propos</a></li>
+                <li><a href="./html/inscription.html">Inscription</a></li>
+                <li><a href="./html/connexion.html">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -93,6 +103,22 @@
         </div>
     </main>
     <hr>
+    <!-- Section carrousselle -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="./img/santemental_psychiatrie.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="./img/Carou2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="./img/Carou3.jpg" alt="Slide 3">
+            </div>
+        </div>
+        <button type="button" class="prev" id="prevBtn">&#10094;</button>
+        <button type="button" class="next" id="nextBtn">&#10095;</button>
+    </div>
 
     <footer>
         <div class="footeracceuil">

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .logo{
     width: 100px;
     height: 100px;
@@ -53,10 +55,18 @@ nav{
     color: white;
     background-color:rgba(40, 152, 196); ;
 }
+
+.grey-qo-regular {
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
 .textedebienvenu{
     text-align: justify;
-    font-size: 1em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8em;
+    font-family: "Grey Qo", cursive;
 }
 .bienvenu{
     padding: 20px;
@@ -91,6 +101,68 @@ footer ul{
 .footeracceuil ul{
  margin-top: 20px;
 }
+
+/* section carroussel acceuil*/
+* {
+    box-sizing: border-box;
+}
+
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/* Fin section acceuil caroussel */
 
 
 /*css page service*/
@@ -321,12 +393,12 @@ main li p{
 }
 
 /* CSS pages contacts */
-
 .corps {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    animation: fadeInBody 1s ease-in-out;
 }
 
 .container-footer {
@@ -334,7 +406,9 @@ main li p{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    animation: fadeInUp 1s ease-in-out;
 }
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -348,11 +422,13 @@ main li p{
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .contact-form h2 {
     margin-top: 0;
+    animation: fadeInLeft 1s ease-in-out;
 }
 
 .contact-form label {
@@ -363,6 +439,115 @@ main li p{
 
 .contact-form input,
 .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #61dafb;
+    box-shadow: 0 0 5px #61dafb;
+    transform: scale(1.02);
+}
+
+.contact-form button {
+    background-color: rgb(40, 152, 196);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: rgb(28, 128, 166);
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#formMessage.error {
+    color: red;
+    animation: shake 0.5s;
+}
+
+#formMessage.success {
+    color: green;
+    animation: fadeInUp 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/*CSS Fomulaire modification*/
+.formulaireDeMode {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    opacity: 90%;
+}
+
+.modeForm {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modeForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modeForm input,
+.modeForm select {
     width: 98%;
     padding: 10px;
     margin-bottom: 20px;
@@ -370,7 +555,7 @@ main li p{
     border-radius: 4px;
 }
 
-.contact-form button {
+.modeForm button {
     background-color:  rgb(40, 152, 196);
     color: white;
     border: none;
@@ -378,16 +563,199 @@ main li p{
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.contact-form button:hover {
-    background-color: rgb(40, 152, 196);
-
+.modeForm button:hover {
+    background-color: rgb(232, 8, 8);
+    transform: scale(1.05);
+    color: black;
 }
 
-/*CSS Fomulaire modification*/
-.formulaireDeMode{
+.formulaireDeMode h1 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Fade In Animation for the Form */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.formulaireDeMode {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+/* Shake Effect for Error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+input.error {
+    animation: shake 0.5s;
+}
+
+/* Success Checkmark */
+input.success::after {
+    content: '✔';
+    color: green;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.formulaireDeMode label {
+    font-weight: bold;
+}
+
+.formulaireDeMode input[type="text"],
+.formulaireDeMode input[type="password"],
+.formulaireDeMode input[type="tel"],
+.formulaireDeMode input[type="email"],
+.formulaireDeMode select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Surbrillance des champs actifs */
+.formulaireDeMode input[type="text"]:focus,
+.formulaireDeMode input[type="password"]:focus,
+.formulaireDeMode input[type="tel"]:focus,
+.formulaireDeMode input[type="email"]:focus,
+.formulaireDeMode select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #f0f8ff;
+    outline: none;
+}
+
+/* .modebody{
+    background-image: url(../img/fond.jpg);
+} */
+
+#titreErreur {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.animation-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.circle, .square, .triangle {
+    position: absolute;
+    animation: move 4s infinite ease-in-out;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61;
+    top: 0;
+    right: 0;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #ffcc00;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, 100px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Css responsivite */
+@media screen and (max-width: 768px) {
+    .premier {
+        display: none;
+    }
+
+    /* Style the hamburger menu button */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Hide the navigation menu by default on mobile */
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+
+    #navMenu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #navMenu li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+}
+
+/* Show the menu when the screen is larger */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    #navMenu {
+        display: flex;
+        flex-direction: row;
+    }
+}
+/* Styles pour le logo et le bouton hamburger */
+nav {
     display: flex;
+<<<<<<< HEAD
 }
 /* Style pour le bouton de soumission */
 #soumis {
@@ -448,3 +816,135 @@ main li p{
     color: rgb(1, 35, 48);
     font-weight: bold;
 }
+=======
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: relative; /* Pour le positionnement du menu */
+}
+
+.logo {
+    width: 100px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+
+/* Cacher le menu par défaut en vue mobile */
+.navbar_nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar_nav {
+        display: none; /* Cacher le menu par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Ajuster en fonction de la hauteur de la barre de navigation */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+        transition: max-height 0.3s ease-in-out; /* Transition pour l'effet de déroulement */
+        max-height: 0; /* Masquer le contenu par défaut */
+        overflow: hidden; /* Empêcher le débordement */
+    }
+
+    .navbar_nav.active {
+        display: flex;
+        max-height: 500px; /* Ajuster si nécessaire pour permettre le déroulement */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/* Styles pour la section "À propos" */
+.presentation {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    /* Ajoutez d'autres styles selon vos préférences */
+}
+
+#content li {
+    margin-bottom: 20px;
+    /* Ajoutez d'autres styles selon vos préférences */
+}
+
+/* Animation pour la section "À propos" */
+.slide-up {
+    animation: slideUp 1s ease-in-out;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Styles pour la section "À propos" */
+.presentation {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    /* Ajoutez d'autres styles selon vos préférences */
+}
+
+#content li {
+    margin-bottom: 20px;
+    /* Ajoutez d'autres styles selon vos préférences */
+}
+
+/* Animation pour la section "À propos" */
+.slide-up {
+    animation: slideUp 1s ease-in-out;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+>>>>>>> e8c7f7c1bb05716509084ef84beb5eba0a9d89a1

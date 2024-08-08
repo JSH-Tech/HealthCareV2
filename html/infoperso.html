@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon compte</title>
+    <link rel="stylesheet" href="../css/stylesInfos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">  
+</head>
+<body>
+    <div class="navbar">
+        <span class="navbar-title">Mon compte</span>
+        <div class="navbar-links">
+            <a href="#" id="mesInfos" class="navbar-link">MES INFOS</a>
+            <a href="modificationinfo.html" class="navbar-link modifier">MODIFIER MES INFOS</a>
+            <a href="../index.html" class="navbar-link modifier">Deconnexion</a>
+        </div>
+    </div>
+    <div id="confirmation" class="hidden">
+        <h2>Inscription réussie</h2>
+        <p>Votre inscription a été réussie. Cliquez sur le bouton ci-dessous pour afficher vos informations.</p>
+        <button type="button" id="viewInfoButton">Afficher mes informations</button>
+    </div>
+    <div id="client-container"></div>
+    <script src="../script/infos.js"></script>
+</body>
+</html>

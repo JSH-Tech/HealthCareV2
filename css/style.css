@@ -389,3 +389,62 @@ main li p{
 .formulaireDeMode{
     display: flex;
 }
+/* Style pour le bouton de soumission */
+#soumis {
+    background-color: #007bff; /* Couleur bleue plus vive pour le bouton */
+    color: #fff;
+    border: none;
+    padding: 12px 20px; /* Padding ajusté pour un bouton plus grand */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+#soumis:hover {
+    background-color: #0056b3; /* Couleur plus sombre au survol */
+}
+
+#soumis:focus {
+    outline: none; /* Retire le contour par défaut du focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombre de focus pour l'accessibilité */
+}
+
+/* Animation pour le bouton */
+@keyframes wiggle {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* Keyframes */
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  .enregistrement {
+    text-align :center
+  }
+  .remerciement {
+    display: none;
+    color: rgb(1, 35, 48);
+    font-weight: bold;
+}

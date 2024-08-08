@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="icon" href="/img/logosansfond.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/inscription.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html"><img src="../img/logosansfond.png" alt="Logo health care" class="logo"></a>
+            <ul class="navbar_nav">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./apropos.html">A propos</a></li>
+                <li><a href="./inscription.html">Inscription</a></li>
+                <li><a href="./connexion.html">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class= "inscription">
+        <h1 class="enregistrement">ENREGISTRE TOI</h1>
+
+        <!-- FORMULAIRE D'INSCRIPTION -->
+
+        <form action="#" method="post" id="registrationform" name="form_inscription" >
+            <fieldset id ="inscriptionform">
+                <legend>S'il vous plait veuiller remplir ce formulaire pour finaliser votre inscription</legend>
+                <fieldset class="inscription">
+                    <legend>Information d'identite</legend>
+                    <!-- L'utilisateur entrera son prenom, son nom et son age-->
+                    <div id="nom">
+                        <label for="name"> Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Entrer votre nom"/>
+                        <div></div>
+                    </div>
+                    <div id="prenom">
+                        <label for="Surname">Prenom</label>
+                        <input type="text" id="Surname" name="Surname" placeholder="Entrer votre Prenom"/>
+                        <div></div>
+                    </div>
+                    <div id="old">
+                        <label for="age">Age</label>
+                        <select name="age" id="age">
+                            <option value="1">Enfant 0-12 ans</option>
+                            <option value="2">Adolescent 13-20 ans</option>
+                            <option value="2">Adulte 21-59 ans</option>
+                            <option value="2">Senior 60 ans et plus</option>
+                        </select>
+                        <div></div>
+                    </div>
+                </fieldset>
+                <fieldset class="inscription">
+                    <legend>Genre de la personne</legend>
+                    <div id="genre">
+                        <label for="homme">Homme</label>
+                        <input type="radio" name="homme" id="homme">
+                        <label for="femme">Femme</label>
+                        <input type="radio" name="femme" id="femme">
+                        <label for="autre">Autre</label>
+                        <input type="radio" name="autre" id="autre">
+                        <div></div>
+                    </div>
+                    
+                </fieldset>
+                <fieldset class="inscription">
+                    <legend>Adresse</legend>
+                    <div id="ruelle">
+                        <!-- Rue-->
+                        <label for="rue">Rue</label>
+                        <input type="text" name="rue" id="rue" >
+                    </div>
+                    <div id="city">
+                        <!-- ville-->
+                        <label for="ville">Ville</label>
+                        <input type="text" name="ville" id="ville" placeholder="Ottawa">
+                        <div></div>
+                    </div>
+                    <div id="region">
+                        <!-- province -->
+                        <label for="province">Province</label>
+                        <input type="text" name="province" id=" province" placeholder="Ontario">
+                        <div></div>
+                    </div>
+                    <div id="postalcode">
+                        <!--  Code postal -->
+                        <label for="postcode">Postal Code:</label>
+					    <input type="text" id="postcode" name="postcode" placeholder="K1Z 8G3"/>
+					    <div></div>
+                    </div>
+                </fieldset>  
+                <fieldset class="inscription">
+                    <legend>Information Personnelle</legend>
+                    <div id="Personnelle">
+                        <fieldset>
+                            <legend>Situation matrimoniale</legend>
+                            <div>
+                                <label for="celibataire">Celibataire</label>
+                                <input type="radio" id="celibataire" name="celibataire">
+                                <label for="marie">Marie</label>
+                                <input type="radio" id="marie" name="marie">
+                                <div></div>
+                            </div>
+                            <div>
+                                <label for="nombre_enfant">Nombre d'enfant</label>
+                                <input type="text" name="nombre_enfant" id="nombre_enfant">
+                                <div></div>
+                            </div>
+                        </fieldset>
+                        <div id = "phone">
+                            <label for="telephone">numero de téléphone</label>
+                            <input type="text" id="telephone" name="telephone" placeholder="(e.g. 345-012-1245)"/> 
+                            <div></div>
+                        </div>
+                        <div id ="email">
+                            <label for="Email">Adresse E-mail</label>
+                            <input type="text" id="Email" name="Email" placeholder="e.g. williams@gmail.com"/>
+                            <div></div>
+                        </div>
+                        <div id = "motpasse">
+                            <label for="mot_passe">Mot de passe</label>
+                            <input type="text" id="mot_passe" name ="mot_passe" placeholder="********">
+                            <div></div>
+                        </div>
+                        
+                    </div>
+                 <!-- Bouton de soumission-->
+                 <button id="soumis" type="submit">Envoyer</button>
+            </fieldset>
+        </form>
+        <!-- Mesage de fin -->
+         <div >
+            <p id="thankYouMessage" class="remerciement">Merci pour votre inscription ! Nous vous répondrons bientôt.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footerinscription">
+            <p>&copy; 2024 HealthCare. Tous droits réservés.</p>
+            <ul>
+                <li><a href="#"><img src="../img/fb.png" alt="Page facebook"></a></li>
+                <li><a href="#"><img src="../img/insta.jpg" alt="Page instagram"></a></li>
+                <li><a href="#"><img src="../img/twitter.jpg" alt="Page twitter"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

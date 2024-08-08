@@ -45,4 +45,11 @@ document.getElementById('nextBtn').addEventListener('click', function() {
 moveSlide(1);
 stopAutoSlide(); // Optionally stop auto slide on manual interaction
 });
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const menuNav = document.getElementById('menuNav');
+
+    hamburgerBtn.addEventListener('click', () => {
+        menuNav.classList.toggle('active');
+    });
 })
+

@@ -576,3 +576,54 @@ input.success::after {
     text-align: center;
     font-weight: bold;
 }
+
+.animation-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.circle, .square, .triangle {
+    position: absolute;
+    animation: move 4s infinite ease-in-out;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61;
+    top: 0;
+    right: 0;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #ffcc00;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, 100px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
